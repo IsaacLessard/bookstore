@@ -1,0 +1,31 @@
+/*
+=================
+FONTS
+=================
+*/
+body {
+  font-family: "Open Sans", serif; }
+
+header {
+  display: inline-flex;
+  width: 100vw; }
+
+.logo {
+  width: 50px;
+  height: 50px; }
+
+.title {
+  padding-left: 20px;
+  margin: 15px; }
+
+.outer {
+  width: 47vw;
+  height: 47vh;
+  border: 2px solid black;
+  display: inline-flex; }
+
+.inner {
+  width: 150px;
+  height: 150px;
+  margin: 25px;
+  border: 2px solid black; }
