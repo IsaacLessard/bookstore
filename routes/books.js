@@ -34,6 +34,7 @@ router.post('/new', function (req, res) {
     res.send('created new id of ' + id)
   })
 })
+
 router.get('/:id', function(req, res) {
   Books().select().where('id', req.params.id).then(function(results) {
     var book = results[0];
@@ -47,6 +48,12 @@ router.get('/:id', function(req, res) {
       })
     }
   })
-})
+  })
+
+  router.post('/:id/del', function(req, res) {
+    Books().select().where('id', req.params.id).del().then(function(){
+      res.send('book deleted')
+    })
+  })
 
 module.exports = router;

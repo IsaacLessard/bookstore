@@ -1,9 +1,17 @@
 extends layout
 
 block content
-    div.bookContainer
-      img(src=author.photo_url)
-      div.authorInfo
-        h3= author.first_name author.last_name
-        p= author.bio
+  div.bookContainer
+    img(src=author.photo_url)
+    div.authorInfo
+      h3 #{author.first_name} #{author.last_name}
+      p= author.bio
+    form(action="/authors/#{author.id}/del" method="post" class="authorDelete")
+      button.deleteAuthor Delete Author
     
+
+  a(href="/authors/new") New Author
+  br
+  a(href="/books") Books 
+  br
+  a(href="/authors") Authors 

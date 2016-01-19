@@ -5,7 +5,8 @@ block content
     div.bookContainer
       img(src=book.img_url)
       div.bookInfo
-        h3= book.title
+        a(href="/books/" + book.id)
+          h3= book.title
         if(book.author3)
           p By #{book.author}, #{book.author2}, and #{book.author3}
         else if(book.author2)
@@ -16,4 +17,5 @@ block content
         p #{book.desc}
     
   a(href="/books/new") New Book
+  br
   a(href="/authors") Authors 

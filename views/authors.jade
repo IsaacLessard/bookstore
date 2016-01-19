@@ -5,12 +5,14 @@ block content
     div.authorContainer
       img(src=author.photo_url)
       div.authorInfo
-        h3 #{author.last_name}, #{author.first_name}
-        p= author.bio
+        a(href="/authors/" + author.id)
+          h3 #{author.last_name}, #{author.first_name}
+          p= author.bio
         
         
         
         
   a(href="/authors/new") New Author
+  br
   a(href="/books") Books 
     
