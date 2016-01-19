@@ -24,8 +24,9 @@ router.post('/new', function (req, res) {
     bio: req.body.bio
   }
   console.log(req.body)
-  Authors().insert(authorNew)
-  res.redirect('/authors')
+  Authors().insert(authorNew, 'id').then(function(id){
+    res.send('created new id of ' + id)
+  })
 })
 
 router.get('/:id', function(req, res) {

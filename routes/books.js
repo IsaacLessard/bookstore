@@ -5,6 +5,9 @@ var knex = require('../db/knex')
 function Books() {
   return knex('books')
 }
+function Authors() {
+  return knex('authors')
+}
 
 router.get('/', function (req, res, next) {
   Books().select().then(function(books) {
@@ -13,7 +16,9 @@ router.get('/', function (req, res, next) {
 });
 
 router.get('/new', function (req, res, next) {
-  res.render('newBook');
+  Authors().select().then(function(authors) {
+    res.render('newBook', {authors: authors});
+  })
 });
 
 router.post('/new', function (req, res) {
@@ -25,10 +30,10 @@ router.post('/new', function (req, res) {
     desc: req.body.desc
   }
   console.log(req.body)
-  Books().insert(bookNew)
-  res.redirect('/books')
+  Books().insert(bookNew, 'id').then(function(id){
+    res.send('created new id of ' + id)
+  })
 })
-
 router.get('/:id', function(req, res) {
   Books().select().where('id', req.params.id).then(function(results) {
     var book = results[0];
