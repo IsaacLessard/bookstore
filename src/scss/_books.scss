@@ -1,0 +1,22 @@
+
+
+.bookContainer {
+  width: 60vw;
+  height: 40vh;
+  display: inline-flex;
+  img {
+    width: 40%;
+    height: 80%;
+  }
+  div {
+    width: 60%;
+    height: 80%;
+  }
+}
+
+
+
+.bookForm {
+  display: inline-flex;
+  flex-direction: column;
+}

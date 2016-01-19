@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  form(action="/books/new" method="post" class="bookForm")
+    label(for='title') Book Title
+    input(type='text' name="title")
+    label(for='author') Author
+    input(type='text' name='author')
+    label(for='genre') Genre
+    input(type='text' name='genre')
+    label(for='img_url') Picture URL
+    input(type='text' name='img_url')
+    label(for='desc') Book Description
+    input(type='text' name='desc')
+    button(type='submit') Submit

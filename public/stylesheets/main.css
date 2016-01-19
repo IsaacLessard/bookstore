@@ -29,3 +29,18 @@ header {
   height: 150px;
   margin: 25px;
   border: 2px solid black; }
+
+.bookContainer {
+  width: 60vw;
+  height: 40vh;
+  display: inline-flex; }
+  .bookContainer img {
+    width: 40%;
+    height: 80%; }
+  .bookContainer div {
+    width: 60%;
+    height: 80%; }
+
+.bookForm {
+  display: inline-flex;
+  flex-direction: column; }
