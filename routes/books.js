@@ -31,7 +31,7 @@ router.post('/new', function (req, res) {
   }
   console.log(req.body)
   Books().insert(bookNew, 'id').then(function(id){
-    res.send('created new id of ' + id)
+    res.redirect('/books')
   })
 })
 
