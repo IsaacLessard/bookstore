@@ -52,7 +52,7 @@ router.get('/:id', function(req, res) {
 
   router.post('/:id/del', function(req, res) {
     Books().select().where('id', req.params.id).del().then(function(){
-      res.send('book deleted')
+      res.redirect('/books')
     })
   })
 

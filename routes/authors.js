@@ -46,7 +46,7 @@ router.get('/:id', function(req, res) {
 
   router.post('/:id/del', function(req, res) {
     Authors().select().where('id', req.params.id).del().then(function(){
-      res.send('deleted author');
+      res.redirect('/authors')
     })
   })
 
