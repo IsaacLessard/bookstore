@@ -1,0 +1,15 @@
+extends layout
+
+block content
+      img(src=book.img_url)
+      div.bookInfo
+        h3= book.title
+        if(book.author3)
+          p By #{book.author}, #{book.author2}, and #{book.author3}
+        else if(book.author2)
+          p By #{book.author} and #{book.author2} 
+        else 
+          p By #{book.author}
+        small #{book.genre}
+        p #{book.desc}
+    

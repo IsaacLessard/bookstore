@@ -25,8 +25,23 @@ router.post('/new', function (req, res) {
     desc: req.body.desc
   }
   console.log(req.body)
-  Books().insert(bookNew, 'id')
+  Books().insert(bookNew)
   res.redirect('/books')
+})
+
+router.get('/:id', function(req, res) {
+  Books().select().where('id', req.params.id).then(function(results) {
+    var book = results[0];
+    if (book) {
+      res.render('book', {
+        book: book
+      })
+    } else {
+      res.render('error', {
+        message: 'This book does not exist.'
+      })
+    }
+  })
 })
 
 module.exports = router;
