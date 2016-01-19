@@ -7,7 +7,7 @@ function Authors() {
 }
 
 router.get('/', function (req, res, next) {
-  Books().select().then(function(books) {
+  Authors().select().then(function(authors) {
     res.render('authors', {authors: authors});
   })
 });
@@ -17,21 +17,21 @@ router.get('/new', function (req, res, next) {
 });
 
 router.post('/new', function (req, res) {
-  var bookNew = {
+  var authorNew = {
     first_name: req.body.first_name,
     last_name: req.body.last_name,
     photo_url: req.body.photo_url,
     bio: req.body.bio
   }
   console.log(req.body)
-  Books().insert(bookNew)
+  Authors().insert(authorNew)
   res.redirect('/authors')
 })
 
 router.get('/:id', function(req, res) {
-  Books().select().where('id', req.params.id).then(function(results) {
-    var book = results[0];
-    if (book) {
+  Authors().select().where('id', req.params.id).then(function(results) {
+    var author = results[0];
+    if (author) {
       res.render('author', {
         author: author
       })

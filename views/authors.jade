@@ -2,9 +2,13 @@ extends layout
 
 block content
   for author in authors
-    div.bookContainer
+    div.authorContainer
       img(src=author.photo_url)
       div.authorInfo
-        h3= author.first_name author.last_name
+        h3 #{author.last_name}, #{author.first_name}
         p= author.bio
+        
+        
+        
+  a(href="/authors/new") Click Here
     
